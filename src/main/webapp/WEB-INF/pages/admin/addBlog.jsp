@@ -40,7 +40,7 @@
             <label for="userByUserId.id">Author:</label>
             <select class="form-control" id="userByUserId.id" name="userByUserId.id">
                 <c:forEach items="${userList}" var="user">
-                    <option value="${user.id}">${user.nickname}, ${user.firstName} ${user.lastName}</option>
+                    <option value="${user.id}">${user.nickname}, ${user.firstName}, ${user.lastName}</option>
                 </c:forEach>
             </select>
         </div>

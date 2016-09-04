@@ -4,6 +4,7 @@ import com.yxc.model.BlogEntity;
 import com.yxc.model.UserEntity;
 import com.yxc.repository.BlogRepository;
 import com.yxc.repository.UserRepository;
+import org.hibernate.mapping.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -40,28 +41,9 @@ public class BlogController {
         return "admin/addBlog";
     }
 
-//    // 添加博文，POST请求，重定向为查看博客页面
-//    @RequestMapping(value = "/admin/blogs/addP", method = RequestMethod.POST)
-//    public String addBlogPost(@ModelAttribute("blog") BlogEntity blogEntity) {
-//        // 打印博客标题
-//        System.out.println(blogEntity.getTitle());
-//        // 打印博客作者
-//        System.out.println(blogEntity.getUserByUserId().getNickname());
-//        // 存库
-//        blogRepository.saveAndFlush(blogEntity);
-//        // 重定向地址
-//        return "redirect:/admin/blogs";
-//    }
-
-    @RequestMapping(value = "admin/blogs/addP",method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/blogs/addP",method = RequestMethod.POST)
     public String addBlogPost(@ModelAttribute("blog") BlogEntity blogEntity) {
-         //打印博客标题
-        System.out.println(blogEntity.getTitle());
-        // 打印博客作者
-        System.out.println(blogEntity.getUserByUserId().getNickname());
-        // 存库
         blogRepository.saveAndFlush(blogEntity);
-        // 重定向地址
         return "redirect:/admin/blogs";
     }
 
