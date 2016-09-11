@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>SpringMVC 添加博客</h1>
+    <h1>SpringMVC 添加博客测试</h1>
     <hr/>
     <form:form action="/admin/blogs/addP" method="post" commandName="blog" role="form">
         <div class="form-group">
