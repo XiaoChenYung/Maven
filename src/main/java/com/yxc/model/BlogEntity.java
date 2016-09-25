@@ -12,7 +12,7 @@ public class BlogEntity {
     private int id;
     private String title;
     private String content;
-    private Date pubDate;
+    private String pubDate;
     private UserEntity userByUserId;
 
     @Id
@@ -47,11 +47,11 @@ public class BlogEntity {
 
     @Basic
     @Column(name = "pub_date", nullable = false)
-    public Date getPubDate() {
+    public String getPubDate() {
         return pubDate;
     }
 
-    public void setPubDate(Date pubDate) {
+    public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
 
