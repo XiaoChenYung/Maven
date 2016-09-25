@@ -9,8 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.nio.channels.FileChannel;
 import java.util.List;
 import javax.persistence.SqlResultSetMapping;
 
@@ -45,6 +48,13 @@ public class BlogController {
     public String addBlogPost(@ModelAttribute("blog") BlogEntity blogEntity) {
         blogRepository.saveAndFlush(blogEntity);
         return "redirect:/admin/blogs";
+    }
+
+    @RequestMapping(value = "admin/blogs/show/{id}",method = RequestMethod.GET)
+    public String blogDetail(@PathVariable("id") Integer userId, ModelMap modelMap) {
+        BlogEntity blogEntity = blogRepository.findOne(userId);
+        modelMap.addAttribute("user",blogEntity);
+        return "admin/blogDetail";
     }
 
 }
