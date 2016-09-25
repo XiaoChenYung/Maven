@@ -53,7 +53,7 @@ public class BlogController {
     @RequestMapping(value = "admin/blogs/show/{id}",method = RequestMethod.GET)
     public String blogDetail(@PathVariable("id") Integer userId, ModelMap modelMap) {
         BlogEntity blogEntity = blogRepository.findOne(userId);
-        modelMap.addAttribute("user",blogEntity);
+        modelMap.addAttribute("blog",blogEntity);
         return "admin/blogDetail";
     }
 
