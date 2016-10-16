@@ -25,8 +25,6 @@
     <!--[if lt IE
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-
-
 <body>
 <div class="container">
     <h1>SpringMVC 添加博客测试</h1>
